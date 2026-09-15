@@ -1,0 +1,8 @@
+LE GRIMOIRE COSY — V3 MOBILE / PWA
+
+- Sur PC : double-cliquer sur index.html pour tester l'interface.
+- Sur smartphone : la mise en page passe automatiquement en version mobile avec navigation en bas.
+- Pour l'installer comme une vraie PWA (icône + plein écran + cache hors connexion), le dossier doit être servi via HTTPS. Un simple fichier file:/// ne permet pas au service worker de fonctionner.
+- Les emplacements images/couvertures sont conservés pour que vous puissiez ajouter vos visuels ensuite.
+
+Fichiers PWA ajoutés : manifest.webmanifest + sw.js.

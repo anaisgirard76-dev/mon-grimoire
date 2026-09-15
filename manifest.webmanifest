@@ -1,0 +1,12 @@
+{
+  "name":"Le Grimoire — Livres & Gaming",
+  "short_name":"Grimoire",
+  "description":"Bibliothèque cosy, PAL, recommandations et gaming.",
+  "start_url":"./index.html",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#4b302d",
+  "theme_color":"#ead1b8",
+  "orientation":"portrait-primary",
+  "icons":[]
+}

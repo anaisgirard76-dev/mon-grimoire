@@ -1,0 +1,1 @@
+Double-clique sur index.html pour ouvrir le prototype dans Edge.\nLes titres 'La Reine des Ombres', 'Les Cendres du Royaume' et 'Une romance à découvrir' sont fictifs et servent uniquement à la démonstration.\nstyle.css = apparence ; script.js = livres et interactions.

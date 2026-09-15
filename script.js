@@ -1,0 +1,11 @@
+const data=[
+{t:"Fourth Wing",g:"Romantasy",s:"Lu",r:5,i:"🐉",tags:["romance","action","creatures","enemies"],trope:"Dragons • Académie • Enemies to lovers"},
+{t:"Un palais d'épines et de roses",g:"Romantasy",s:"Lu",r:5,i:"🌹",tags:["romance","magic","enemies"],trope:"Faes • Magie • Romance"},
+{t:"Le Sang et la Cendre",g:"Romantasy",s:"Lu",r:4,i:"⚔",tags:["romance","action","magic"],trope:"Fantasy • Romance • Secrets"},
+{t:"La Reine des Ombres",g:"Fantasy",s:"PAL",r:0,i:"♛",tags:["magic","action"],trope:"Magie • Royauté • Quête"},
+{t:"Les Cendres du Royaume",g:"Romantasy",s:"PAL",r:0,i:"🔥",tags:["enemies","romance","magic"],trope:"Enemies to lovers • Magie"},
+{t:"Une romance à découvrir",g:"Romance",s:"PAL",r:0,i:"♡",tags:["emotion","romance"],trope:"Romance • Émotions"}];
+function tab(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active')}
+function render(){let q=document.getElementById('q').value.toLowerCase(),f=document.getElementById('f').value;let a=data.filter(b=>(f==="Tous"||b.g===f||(f==="PAL"&&b.s==="PAL"))&&(b.t+" "+b.trope).toLowerCase().includes(q));grid.innerHTML=a.map(b=>`<button class="book" onclick="openBook('${b.t.replaceAll("'","\\'")}')"><div class="cover">${b.i}</div><div class="copy"><small>${b.g.toUpperCase()} • ${b.s}</small><h2>${b.t}</h2><p>${b.trope}</p><div class="stars">${b.r?"★".repeat(b.r)+"☆".repeat(5-b.r):"À DÉCOUVRIR"}</div></div></button>`).join('')}
+function openBook(t){let b=data.find(x=>x.t===t);detail.innerHTML=`<small>${b.g.toUpperCase()} • ${b.s}</small><h1>${b.i} ${b.t}</h1><div class="stars">${b.r?"★".repeat(b.r):"PAS ENCORE LU"}</div><h3>${b.trope}</h3><div class="tags">${b.tags.map(x=>`<span>${x}</span>`).join('')}</div><p>Ici tu pourras écrire ton avis, noter le niveau de romance/spice, tes personnages favoris, la date de lecture, le tome et afficher une zone spoilers.</p>`;modal.showModal()}
+function pick(m){let a=data.filter(x=>x.s==="PAL"&&x.tags.includes(m));let b=a[0]||data.find(x=>x.tags.includes(m));rec.innerHTML=b?`<div><small>LE GRIMOIRE TE PROPOSE</small><h2>${b.i} ${b.t}</h2><p>${b.trope}</p></div>`:"Aucun livre correspondant dans ta PAL."}render();
